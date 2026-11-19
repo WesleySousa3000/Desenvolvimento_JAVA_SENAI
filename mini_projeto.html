@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoCenter | Mundo dos Carros</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: #f1f3f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            max-width: 380px;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="container py-5">
+
+        <header class="text-center mb-5">
+
+            <h1 class="fw-bold">AutoCenter</h1>
+
+            <p class="text-secondary">
+                Conheça o mundo dos automóveis!
+            </p>
+
+        </header>
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+
+                <div class="card shadow mx-auto" id="carro">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600"
+                        class="card-img-top"
+                        alt="Automóvel esportivo BMW">
+
+                    <div class="card-body text-center p-4">
+
+                        <h5 class="card-title fw-bold" id="nomeCarro">
+                            BMW Esportivo
+                        </h5>
+
+                        <p class="card-text" id="informacoes">
+                            Um automóvel que combina beleza, conforto e tecnologia.
+                        </p>
+
+                        <button
+                            class="btn btn-primary w-100"
+                            id="btnDetalhes">
+
+                            Ver detalhes
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        const carro = document.getElementById("carro");
+        const nome = document.getElementById("nomeCarro");
+        const informacoes = document.getElementById("informacoes");
+        const botao = document.getElementById("btnDetalhes");
+
+        let detalhesVisiveis = false;
+
+        botao.addEventListener("click", function() {
+
+            detalhesVisiveis = !detalhesVisiveis;
+
+            if (detalhesVisiveis) {
+
+                nome.textContent = "BMW - Alto Desempenho";
+
+                informacoes.textContent =
+                    "Motor potente, design moderno e excelente desempenho nas estradas.";
+
+                carro.classList.add("bg-dark", "text-white");
+
+                botao.classList.replace("btn-primary", "btn-success");
+
+                botao.textContent = "Ocultar detalhes";
+
+            } else {
+
+                nome.textContent = "BMW Esportivo";
+
+                informacoes.textContent =
+                    "Um automóvel que combina beleza, conforto e tecnologia.";
+
+                carro.classList.remove("bg-dark", "text-white");
+
+                botao.classList.replace("btn-success", "btn-primary");
+
+                botao.textContent = "Ver detalhes";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
